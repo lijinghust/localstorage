@@ -71,11 +71,11 @@
 			var data = this.storage.get(key);
 
 			if(!data){
-				return null;
+				return undefined;
 			}
 			// 签名与存储的签名不一致
 			if(this.signature != data.signature){
-				return null;
+				return undefined;
 			}
 			// 指定忽略过期时间 || 没有过期时间 || 未过期
 			if(ignoreExpires || !data.expires || (new Date()).getTime() < data.expires){
