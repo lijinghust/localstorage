@@ -27,3 +27,20 @@ var myApp = new AppData('hao360', 'newsignature'); // 新的签名
 alert(myApp.get('text')); // undefined
 
 ```
+
+API介绍
+
+1. Storage
+*new Storage(namespace)
+*set(key, value) // key为字符串;value可为任意格式，如：布尔，字符串，对象，数组等
+*get(key)
+*remove(key)
+*clear()
+
+2. AppData
+*new AppData(namespace)
+*set(key, value, expires)  //key为字符串; value可为任意格式，如：布尔，字符串，对象，数组等; expires 过期截止时间的时间戳：如2014-09-01过期，则为(new Date('2014-09-01')).getTime()
+*get(key, ignoreExpires) // ignoreExpires为true or false
+*remove(key)
+*clear()
+*setFormatter(setter, getter) // 设置数据处理方法：比如对数据加密解密等；setter和getter一般成对设置
