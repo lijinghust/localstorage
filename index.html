@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>demo</title>
+	<meta charset='utf-8'>
+</head>
+<body>
+<script type="text/javascript" src="src/storage.js"></script>
+<script type="text/javascript" src="src/appdata.js"></script>
+<script type="text/javascript">
+var st = new AppData('hao','chuo');
+st.set('haha','哈你妹', 10000000000000000)
+alert(st.get('haha'))
+alert((new Storage('hao')).get('haha'))
+
+// 纯粹存储
+var storage = new Storage('hao360');
+storage.set('text', 'hello world!')
+alert(storage.get('text'));
+
+// 带过期时间及签名认证
+var myApp = new AppData('hao360', 'firstsignature');
+myApp.set('text', 'hello world!', '2017-09-01 10:00:00');
+alert(myApp.get('text')); // hello world!
+
+var myApp = new AppData('hao360', 'newsignature'); // 新的签名
+alert(myApp.get('text')); // undefined
+
+</script>
+</body>
+</html>
