@@ -21,6 +21,9 @@ alert(storage.get('text'));
 
 var myApp = new AppData('hao360', 'firstsignature');
 myApp.set('text', 'hello world!', '2017-09-01 10:00:00');
-alert(myApp.get('text'));
+alert(myApp.get('text')); // hello world!
+
+var myApp = new AppData('hao360', 'newsignature'); // 新的签名
+alert(myApp.get('text')); // undefined
 
 ```
